@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Hello Thymeleaf!</title>
+<title>Spring Boot + JPA + Datatables</title>
+<link rel="stylesheet"
+	th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}"></link>
+<script
+	th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js}"></script>
+<script
+	th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+<link rel="stylesheet"
+	th:href="@{https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css}"></link>
+<script
+	src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="/js/datatable.js"></script>
+<script src="/scripts/notify.js"></script>
+<link th:href="@{/css/home.css}" href="/css/home.css" rel="stylesheet"
+	type="text/css"></link>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.notification/1.0.2/jquery.notification.js"></script>
+<link th:href="@{/css/common.css}" href="/css/common.css"
+	rel="stylesheet" type="text/css"></link>
+<script th:src="@{/scripts/notify.min.js}"></script>
+</head>
+<body>
+	<form name="frmCreate" id="frmCreate" th:object="${dto}">
+		<p th:text="'Hello, ' + ${dto.name} + '!'"></p>
+		<h2 style="color: green; margin-left: 30px;">SuccessFully
+			Submitted</h2>
+	</form>
+</body>
+</html>
+<script type="text/javascript">
+	$(document).ready(function() {
+		Notify("Can't Touch This");
+		Notify("Stop! Hammer time", null, null, 'danger');
+
+		Notify("I told you homeboy (You can't touch this)", function() {
+			alert("clicked notification")
+		}, function() {
+			alert("clicked x")
+		}, 'success');
+
+	});
+</script>
